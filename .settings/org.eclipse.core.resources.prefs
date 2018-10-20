@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/Configuration.py=utf-8
+encoding//src/GetStockBasicInfo/GetStockBasicInfoMgr.py=utf-8
+encoding//src/GetStockBasicInfo/GetStockBasicInfo_FromSH.py=utf-8
+encoding//src/GetStockBasicInfo/GetStockBasicInfo_FromSZ.py=utf-8
+encoding//src/PathUtility.py=utf-8
