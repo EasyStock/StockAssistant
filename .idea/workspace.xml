@@ -4,8 +4,6 @@
     <list default="true" id="c3102bc9-3c43-4852-938c-b973aab95ce0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Configuration.py" afterPath="$PROJECT_DIR$/src/Configuration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GetStockBasicInfo/GetStockBasicInfoMgr.py" afterPath="$PROJECT_DIR$/src/GetStockBasicInfo/GetStockBasicInfoMgr.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +13,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="CGetHistoryDataOfIndexFrom_EastMoney.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataOfIndexFrom_EastMoney.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CGetHistroryDataFrom_EastMoney.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistroryDataFrom_EastMoney.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="125" column="51" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +44,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/GetStockBasicInfo/GetStockBasicInfo_FromSZ.py" />
         <option value="$PROJECT_DIR$/src/GetStockBasicInfo/GetStockBasicInfoMgr.py" />
+        <option value="$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataOfIndexFrom_EastMoney.py" />
       </list>
     </option>
   </component>
@@ -98,7 +118,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GetStockBasicInfoMgr">
+  <component name="RunManager" selected="Python.CGetHistoryDataOfIndexFrom_EastMoney">
+    <configuration name="CGetHistoryDataOfIndexFrom_EastMoney" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="StockAssistant" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataOfIndexFrom_EastMoney.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="GetStockBasicInfoMgr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,16 +187,18 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSH" />
       <item index="1" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSZ" />
       <item index="2" class="java.lang.String" itemvalue="Python.GetStockBasicInfoMgr" />
+      <item index="3" class="java.lang.String" itemvalue="Python.CGetHistoryDataOfIndexFrom_EastMoney" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.GetStockBasicInfoMgr" />
-        <item index="1" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSZ" />
-        <item index="2" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSH" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.CGetHistoryDataOfIndexFrom_EastMoney" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GetStockBasicInfoMgr" />
+        <item index="2" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSZ" />
+        <item index="3" class="java.lang.String" itemvalue="Python.GetStockBasicInfo_FromSH" />
       </list>
     </recent_temporary>
   </component>
@@ -179,12 +218,12 @@
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1238" height="777" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44822696" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33617023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -232,6 +271,22 @@
           <folding>
             <element signature="e#90#144#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistroryDataFrom_EastMoney.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="125" column="51" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataOfIndexFrom_EastMoney.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="89" column="31" lean-forward="true" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
