@@ -9,6 +9,7 @@ from GetStockBasicInfo import GetStockBasicInfo_FromSH
 import Configuration
 import time
 import PathUtility
+import pandas as pd
 
 
 def GetBasicInfo(folder=Configuration.BasicInfo_DefaultFolder):
@@ -48,5 +49,22 @@ def GetBasicInfo(folder=Configuration.BasicInfo_DefaultFolder):
             break
 
 
+def ReadBasicInfoFromFile():
+    src_fileName_SH = '%s/%s.csv' % (
+                Configuration.BasicInfo_DefaultFolder,
+                Configuration.BasicInfo_Name_SH)
+
+    src_fileName_SZ = '%s/%s.csv' % (
+        Configuration.BasicInfo_DefaultFolder,
+        Configuration.BasicInfo_Name_SZ)
+
+    df_sh = pd.read_csv(src_fileName_SH)
+    df_sz = pd.read_csv(src_fileName_SZ)
+    result = df_sh.append(df_sz)
+
+    return result
+
+
 if __name__ == '__main__':
-    GetBasicInfo()
+    df = ReadBasicInfoFromFile()
+    df.to_csv('/Volumes/Data/StockData/aa/aa.csv', encoding='utf_8_sig', index=False, header=True)
