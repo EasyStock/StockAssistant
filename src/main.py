@@ -19,8 +19,10 @@ def GetAllHistoryIndexData_FromeEastMoney():
     east = CGetHistoryDataOfIndexFrom_EastMoney.CGetHistoryDataOfIndexFromEastMoney()
     east.GetHistoryDataWithIndexIDs()
 
-
+def GetBasicInfo():
+    GetStockBasicInfoMgr.GetBasicInfo()
 
 if __name__ == '__main__':
-    #GetAllHistroyData_FromEastMoney('hfq')
+    GetBasicInfo()
+    GetAllHistroyData_FromEastMoney('hfq')
     GetAllHistoryIndexData_FromeEastMoney()
