@@ -18,15 +18,6 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
         self.jsonHead = 'fsData1540097283937_89020652'
         self.connection = None
         self.cycle = 'k'
-        self.indexs = {
-            u'0000011': u'上证指数',
-            u'0000021': u'A股指数',
-            u'0000031': u'B股指数',
-            u'0000161': u'上证50',
-            u'0003001': u'沪深300',
-            u'3990062': u'创业板指',
-            u'3990012': u'深证成指',
-            }
 
     def FormatIndexURL(self, indexID):
         '''
@@ -71,7 +62,7 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
                 return rawData
             return None
 
-    def GetHistoryDataWithIndexID(self, stockID, folder=None):
+    def GetHistoryDataWithIndexID(self, stockID, indexName, folder=None):
         '''
         从东方财富网获取股票ID为stockID 的历史信息
         http://pdfm2.eastmoney.com/EM_UBG_PDTI_Fast/api/js?id=0000161&TYPE=wk&js=fsData1540097283937_89020652((x))&rtntype=5&isCR=false&authorityType=fa&fsData1540097283937_89020652=fsData1540097283937_89020652
@@ -87,24 +78,25 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
                 print 'get from http://%s%s error' % (self.site, url)
                 return False
             df = self.ParseJosonData(rawData[len(self.jsonHead)+1:-1])
-            fileName = '%s/%s.csv' % (folder, self.indexs[stockID])
-            print fileName
+            fileName = u'%s/%s_%s.csv' % (folder, stockID, indexName)
             df.to_csv(fileName, encoding='utf_8_sig', index=False, header=True)
             return True
         except Exception as e:
             print '%s, http://%s%s' % (e, self.site, url)
             return False
 
-    def GetHistoryDataWithIndexIDs(self, folder=None):
+    def GetHistoryDataWithIndexIDs(self, indexInfos, folder=None):
         if folder is None:
             folder = u'%s/东方财富_指数' % (HistoryInfo_DefaultFolder)
 
         PathUtility.MakeDirIfNotExist(folder)
-        for indexID in self.indexs:
-            self.GetHistoryDataWithIndexID(indexID, folder)
-        print '完成!'
-
+        for row in indexInfos.itertuples():
+            indexID = row[1]
+            indexName = row[2]
+            print indexID, indexName
+            self.GetHistoryDataWithIndexID(indexID, indexName, folder)
 
 if __name__ == '__main__':
     index = CGetHistoryDataOfIndexFromEastMoney()
-    index.GetHistoryDataWithIndexIDs()
+    #index.GetHistoryDataWithIndexIDs()
+    print index.GetHistoryDataWithIndexID(u'BK08111', u'/Volumes/Data/StockAssistant/',u'超级品牌')

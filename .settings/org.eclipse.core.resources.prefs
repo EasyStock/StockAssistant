@@ -1,12 +1,15 @@
 eclipse.preferences.version=1
 encoding//src/Configuration.py=utf-8
+encoding//src/GetBanKuaiInfo/EastMoney/BanKuaiInfosMgr.py=utf-8
+encoding//src/GetBanKuaiInfo/EastMoney/GetBanKuaiInfoSummary.py=utf-8
+encoding//src/GetBanKuaiInfo/EastMoney/GetStocksOfBanKuai.py=utf-8
 encoding//src/GetStockBasicInfo/GetStockBasicInfoMgr.py=utf-8
 encoding//src/GetStockBasicInfo/GetStockBasicInfo_FromSH.py=utf-8
 encoding//src/GetStockBasicInfo/GetStockBasicInfo_FromSZ.py=utf-8
 encoding//src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataFrom_EastMoney.py=utf-8
 encoding//src/GetStockHistoryData/DailyK/EastMoney/CGetHistoryDataOfIndexFrom_EastMoney.py=utf-8
 encoding//src/PathUtility.py=utf-8
-encoding//src/Strategy/AlphaFilter.py=utf-8
 encoding//src/Strategy/BetaFilter.py=utf-8
+encoding//src/Strategy/BetaFilter2.py=utf-8
 encoding//src/Strategy/FilterBase.py=utf-8
 encoding//src/main.py=utf-8
