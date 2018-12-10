@@ -52,16 +52,19 @@ class CBataFilter(CFilterBase):
         sub2.index = sub2['日期']
 
         result = pd.merge(sub1, sub2, how='left', on=['日期'])
-        result.index = result['日期']
-#         result['收盘价_涨幅'] = result['收盘价'].pct_change()
-#         result['收盘价_指数_涨幅'] = result['收盘价_指数'].pct_change()
+        # result.index = result['日期']
+        result['收盘价_涨幅'] = result['收盘价'].pct_change()
+        result['收盘价_指数_涨幅'] = result['收盘价_指数'].pct_change()
         result = result.dropna()
         return result
 
     def _calcCorrAndBeta(self, data):
-        corr = data['收盘价'].corr(data['收盘价_指数'])  # 相关系数
-        stda = data['收盘价'].std()  # 标准差
-        stdb = data['收盘价_指数'].std()  # 标准差
+        if data.shape[0] == 1:
+            return (None, 1.0*data['收盘价_涨幅'].values[-1]/data['收盘价_指数_涨幅'].values[-1])
+
+        corr = data['收盘价_涨幅'].corr(data['收盘价_指数_涨幅'])  # 相关系数
+        stda = data['收盘价_涨幅'].std()  # 标准差
+        stdb = data['收盘价_指数_涨幅'].std()  # 标准差
         return (corr, corr*stda / stdb)
 
     def _calcOneDay(self, mergedData, rParam):
@@ -87,7 +90,7 @@ class CBataFilter(CFilterBase):
         ret = pd.DataFrame()
         ret['相关系数'] = corrs
         ret['Beta值'] = betas
-        ret.index = index
+        ret['日期'] = index
         return ret
 
     def doFilterLastDay(self, data=None, lParam=None, rParam=None):
@@ -125,22 +128,21 @@ class CBataFilter(CFilterBase):
                     temp = result[-day:]
                 else:
                     temp = result[-day-i: -i]
-                subKey = temp['日期'][-1]
+                subKey = temp['日期'].values[-1]
                 # fileName = '../../../aa/%d日_%d_%s.csv' % (day, i,subKey)
                 # temp.to_csv(fileName, encoding='utf_8_sig',
                 #            index=False, header=True)
                 (corr, beta) = self._calcCorrAndBeta(temp)
                 dict_corr[subKey] = corr
                 dict_beta[subKey] = beta
+                #print day, subKey, corr, beta
             ret[key1] = dict_corr
             ret[key2] = dict_beta
         res = pd.DataFrame(ret, columns=sorted(ret.keys()))
         columns = ['日期']
         columns.extend(res.columns.values)
-        res.reset_index()
-        res.reindex(columns = columns)
-
-        print res['日期']
+        res = res.reset_index()
+        res.rename(columns={'index': '日期'}, inplace=True)
         result = pd.merge(res, result, how='left', on=['日期'])
         return (True, res)
 
@@ -153,5 +155,5 @@ if __name__ == '__main__':
     df2 = pd.read_csv(file2)
 
     beta = CBataFilter()
-    ret = beta.doFilterEveryDay(df1, df2, (3, 13, 15, 9))
+    ret = beta.doFilterEveryDay(df1, df2, (1,3, 13, 15, 9))
     ret[1].to_csv('./88.csv', encoding='utf_8_sig', index=True, header=True)

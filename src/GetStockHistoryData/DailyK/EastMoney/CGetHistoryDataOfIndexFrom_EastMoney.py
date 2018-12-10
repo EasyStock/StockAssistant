@@ -62,7 +62,7 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
                 return rawData
             return None
 
-    def GetHistoryDataWithIndexID(self, stockID, indexName, folder=None):
+    def GetHistoryDataWithIndexID(self, stockID, folder=None):
         '''
         从东方财富网获取股票ID为stockID 的历史信息
         http://pdfm2.eastmoney.com/EM_UBG_PDTI_Fast/api/js?id=0000161&TYPE=wk&js=fsData1540097283937_89020652((x))&rtntype=5&isCR=false&authorityType=fa&fsData1540097283937_89020652=fsData1540097283937_89020652
@@ -78,7 +78,7 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
                 print 'get from http://%s%s error' % (self.site, url)
                 return False
             df = self.ParseJosonData(rawData[len(self.jsonHead)+1:-1])
-            fileName = u'%s/%s_%s.csv' % (folder, stockID, indexName)
+            fileName = u'%s/%s.csv' % (folder, stockID)
             df.to_csv(fileName, encoding='utf_8_sig', index=False, header=True)
             return True
         except Exception as e:
@@ -94,7 +94,7 @@ class CGetHistoryDataOfIndexFromEastMoney(object):
             indexID = row[1]
             indexName = row[2]
             print indexID, indexName
-            self.GetHistoryDataWithIndexID(indexID, indexName, folder)
+            self.GetHistoryDataWithIndexID(indexID, folder)
 
 if __name__ == '__main__':
     index = CGetHistoryDataOfIndexFromEastMoney()

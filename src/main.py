@@ -9,6 +9,7 @@ from GetStockHistoryData.DailyK.EastMoney import CGetHistoryDataFrom_EastMoney,\
     CGetHistoryDataOfIndexFrom_EastMoney
 from GetBanKuaiInfo.EastMoney.BanKuaiInfosMgr import GetBanKuaiSummary
 from pandas import DataFrame
+from RongZiRongQuan.RongZiRongQuanMgr import GetAllRongZhiRongQuan
 
 
 def GetAllIndexsInfo():
@@ -45,8 +46,13 @@ def GetAllHistoryIndexData_FromeEastMoney():
 def GetBasicInfo():
     GetStockBasicInfoMgr.GetBasicInfo()
 
+
+def GetRongZhiRongQuan():
+    GetAllRongZhiRongQuan('2012-01-01', '2018-12-06')
+
+
 if __name__ == '__main__':
-#     GetAllIndexsInfo()
 #     GetBasicInfo()
 #     GetAllHistroyData_FromEastMoney('hfq')
-    GetAllHistoryIndexData_FromeEastMoney()
+#     GetAllHistoryIndexData_FromeEastMoney()
+    GetRongZhiRongQuan()
