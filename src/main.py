@@ -48,7 +48,7 @@ def GetBasicInfo():
 
 
 def GetRongZhiRongQuan():
-    GetAllRongZhiRongQuan('2012-01-01', '2018-12-06')
+    GetAllRongZhiRongQuan('2012-01-01', None)
 
 
 if __name__ == '__main__':

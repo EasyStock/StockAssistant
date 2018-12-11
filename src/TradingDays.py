@@ -29,9 +29,10 @@ def getTradingDays(_from=None, _to=None, file_='./calendar.csv'):
     if _from is not None:
         allTradingDays = allTradingDays[allTradingDays >= _from]
 
-    if _to is not None:
-        allTradingDays = allTradingDays[allTradingDays <= _to]
+    if _to is None:
+        _to = str(datetime.date.today())
 
+    allTradingDays = allTradingDays[allTradingDays <= _to]
     return allTradingDays
 
 
@@ -44,4 +45,5 @@ def getTradingDaysWithoutSperate(_from=None, _to=None):
 
 
 if __name__ == '__main__':
-    print getTradingDaysWithoutSperate(_from='2017-05-13', _to='2018-10-28')
+    #print datetime.date.today()
+    print getTradingDaysWithoutSperate(_from='2017-05-13', _to=None)
