@@ -4,7 +4,7 @@ Created on 2018年10月20日
 
 @author: robin huang(yuchonghuang@sina.cn)
 '''
-DefaultFolder = u'../'
+DefaultFolder = u'../../'
 
 BasicInfo_DefaultFolder = u'%s/StockData/BasicInfo' % (DefaultFolder)
 HistoryInfo_DefaultFolder = u'%s/StockData/HistoryInfo' % (DefaultFolder)

@@ -27,10 +27,10 @@ def GetAllRongZhiRongQuan(_from=None, _to=None, path=None):
     folder_SH = u'%s/沪市/' % (path)
     folder_SZ = u'%s/深市/' % (path)
     sh = CRongZiRongQuan_SH()
-    sh.getRongZiRongQuanByDates(allDates_SH, folder_SH)
+    sh.getRongZiRongQuanByDates(allDates_SH[:-1], folder_SH)
 
     sz = CRongZiRongQuan_SZ()
-    sz.getRongZiRongQuanByDates(allDates_SZ, folder_SZ)
+    sz.getRongZiRongQuanByDates(allDates_SZ[:-1], folder_SZ)
 
 
 if __name__ == '__main__':
