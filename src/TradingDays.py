@@ -6,6 +6,7 @@ Created on 2018年12月2日
 '''
 import pandas as pd
 import datetime
+from PathUtility import IsFileExist
 
 
 def is_holiday(date, file_='./calendar.csv'):
@@ -24,6 +25,8 @@ def is_holiday(date, file_='./calendar.csv'):
 
 
 def getTradingDays(_from=None, _to=None, file_='./calendar.csv'):
+    if not IsFileExist(file_):
+        file_ = '../calendar.csv'
     df = pd.read_csv(file_)
     allTradingDays = df[df.isOpen == 1]['calendarDate']
     if _from is not None:

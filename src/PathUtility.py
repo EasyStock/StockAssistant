@@ -6,6 +6,7 @@ Created on 2018年10月20日
 '''
 import os
 import shutil
+import re
 
 
 def IsPathExist(path):
@@ -49,6 +50,20 @@ def CopyFile(srcfile, dstfile):
         shutil.copyfile(srcfile, dstfile)
         return True
 
+
+def AllTheFilesInDir(path):
+    if IsPathExist(path) is False:
+        return ()
+
+    res = []
+    for fileName in os.listdir(path):
+        fullPath = os.path.join(path, fileName)
+        if re.findall("^\.", fileName):
+            continue
+        if IsFileExist(fullPath):
+            res.append(fullPath)
+
+    return res
 
 if __name__ == '__main__':
     pass
